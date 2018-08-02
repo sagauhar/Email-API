@@ -53,6 +53,18 @@ docker build --tag=email-api .
 docker run -p 18080:8080 -t -i email-api
 ```
 
+You can then access the service by using http://localhost:18080/email/send and doing a POST.
+
+```
+{
+    "to": "to_email1@email.com;to_email2@email.com",
+    "cc": "cc_email1@email.com;cc_email2@email.com",
+    "bcc": "bcc_email1@email.com;bcc_email2@email.com",
+    "subject": "Subject of your mail",
+    "body": "Body of your mail"
+}
+```
+
 The above commands should create an image using the statements mentioned in the Dockerfile and will run the service on port 18080.
 
 ## Deployment
