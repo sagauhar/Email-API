@@ -55,6 +55,10 @@ docker run -p 18080:8080 -t -i email-api
 
 The above commands should create an image using the statements mentioned in the Dockerfile and will run the service on port 18080.
 
+## Deployment
+
+I used ElasticBeanstalk to deploy the docker image. It is very easy and in just a matter of few clicks, mentioned [here](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create_deploy_docker_image.html), you can get it ready.
+
 ## Testing
 
 There are unit tests written for the main logic class. The idea was to adapt to TDD approach rather than create the tests after the development of main classes.
