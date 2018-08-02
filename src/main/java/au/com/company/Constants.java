@@ -1,6 +1,7 @@
 package au.com.company;
 
 public class Constants {
+    public static final String API_CLASSES = "http.api.classes";
     public static final String SERVER_PORT = "http.server.port";
     public static final String FROM_EMAIL_ADDRESS = "from.address.value";
     public static final String SENDGRID_API_URL = "sendgrid.api.url";

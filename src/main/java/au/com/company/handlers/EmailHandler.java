@@ -10,10 +10,12 @@ import io.reactivex.netty.protocol.http.server.HttpServerRequest;
 import io.reactivex.netty.protocol.http.server.HttpServerResponse;
 import rx.Observable;
 
+import javax.ws.rs.Path;
 import java.io.IOException;
 import java.nio.charset.Charset;
 
-public class EmailHandler implements HttpHandler {
+@Path("/email")
+public class EmailHandler {
     private static final ObjectMapper MAPPER = new ObjectMapper();
 
     private EmailLogic emailLogic = new EmailLogic();
@@ -24,8 +26,8 @@ public class EmailHandler implements HttpHandler {
      * @param response Response object which is used to send the response back
      * @return Observable<Void> to make it compatible with RequestHandler class
      */
-    @Override
-    public Observable<Void> handle(HttpServerRequest<ByteBuf> request, HttpServerResponse<ByteBuf> response) {
+    @Path("/send")
+    public Observable<Void> sendMail(HttpServerRequest<ByteBuf> request, HttpServerResponse<ByteBuf> response) {
         return request.getContent()
                 .flatMap(byteBuf -> {
                     try {
