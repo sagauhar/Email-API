@@ -34,7 +34,7 @@ To setup the project, please update the following properties:
 
 ```
 sendgrid.api.key: API key of SendGrid
-mailgun.api.key: API key of MailGun
+mailgun.api.key: API key of MailGun. The key should start from api: and then the key from the MailGun console.
 mailgun.api.url: URL of MailGun since it has account domain in it
 from.address.value: From address to be used when sending out Emails
 http.server.port: Port on which this service should run on
